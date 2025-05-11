@@ -1,0 +1,18 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: insights-service
+  namespace: cloudcrafter
+spec:
+  selector:
+    app: insights
+  type: LoadBalancer
+  ports:
+  - name: insights
+    protocol: TCP
+    port: 80
+    targetPort: 5000
+    nodePort: 30001
+---
+
