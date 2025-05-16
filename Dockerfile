@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o ./insights
+RUN go build -o ./insights
 
 EXPOSE 8080
 
