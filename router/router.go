@@ -9,4 +9,7 @@ func SetupRoutes (app *fiber.App) {
 	v1 := app.Group("/v1")
 	v1.Get("", handlers.Hello)
 	v1.Get("/github/callback", handlers.GetUserAccessToken)
+
+	// Get User Details
+	v1.Get("/user", handlers.GetUserDetails)
 }
