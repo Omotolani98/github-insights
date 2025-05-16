@@ -1,13 +1,21 @@
-FROM golang:tip-alpine3.21
+# ---------- Builder Stage ----------
+FROM golang:1.22-alpine AS builder
 
 WORKDIR /app
 
 COPY go.mod go.sum ./
 RUN go mod download
 
-COPY *.go ./
+COPY . .
 
 RUN go build -o insights
+
+# ---------- Final Image ----------
+FROM alpine:3.21
+
+WORKDIR /app
+
+COPY --from=builder /app/insights .
 
 EXPOSE 8080
 
