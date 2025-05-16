@@ -12,7 +12,7 @@ func main()  {
 
 	app := fiber.New(fiber.Config{
 		AppName: "Github Insights v1",
-		EnablePrintRoutes: true,
+//		EnablePrintRoutes: true,
 	})
 	
 	app.Use(cors.New())
