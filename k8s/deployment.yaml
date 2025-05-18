@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: insights
-        image: docker.io/tolani98/insights:latest
+        image: docker.io/tolani98/github-insights:latest
         imagePullPolicy: IfNotPresent
         resources:
           requests:
